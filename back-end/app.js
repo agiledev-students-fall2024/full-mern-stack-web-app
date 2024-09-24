@@ -57,6 +57,28 @@ app.get('/messages/:messageId', async (req, res) => {
     })
   }
 })
+
+app.get('/about', async (req, res) => {
+  try {
+    const text = 
+    "Hello! I am Bryant To. I'm a CS major at New York University! \
+     Like most people taking this course, I'm interested in becoming a Software Engineer and \
+     have particular interests in Cloud Computing, System Design, etc. \
+     Besides school, I'm also interested in Sports, especially American Football. I grew up a \
+     big fan of the Dallas Cowboys and will watch them play every NFL Sunday. \ "
+    res.json({
+      text: text,
+      image: "https://cdn.discordapp.com/attachments/735117596529131612/1288282241600061501/IMG_0148_2.jpg?ex=66f49dd5&is=66f34c55&hm=bd835ec43ff6b0e4613d83d242095aa9593cf0e46e5e77fad7a2f17720393efe&"
+    })
+  } catch (err) {
+    console.error(err)
+    res.status(400).json({
+      error: err,
+      status: 'failed to retrieve messages from the database',
+    })
+  }
+})
+
 // a route to handle logging out users
 app.post('/messages/save', async (req, res) => {
   // try to save the message to the database
@@ -77,6 +99,8 @@ app.post('/messages/save', async (req, res) => {
     })
   }
 })
+
+
 
 // export the express app we created to make it available to other modules
 module.exports = app // CommonJS export style!
