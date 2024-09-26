@@ -18,7 +18,17 @@ mongoose
   .then(data => console.log(`Connected to MongoDB`))
   .catch(err => console.error(`Failed to connect to MongoDB: ${err}`))
 
-// load the dataabase models we want to deal with
+// a route to handle fetching about us page
+app.get('/about', async (req, res) => {
+  res.json({
+    name: 'Edison Chen',
+    url: `http://localhost:${port}$/about`, // Need to finish
+    description: 'Hello! I am a senior at NYU Stern pursuing a dual degree in Business, Technology, and Entrepreneurship + computer science.',
+    status: 'all good',
+  })
+})
+
+  // load the dataabase models we want to deal with
 const { Message } = require('./models/Message')
 const { User } = require('./models/User')
 
