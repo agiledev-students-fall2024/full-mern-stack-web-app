@@ -78,5 +78,10 @@ app.post('/messages/save', async (req, res) => {
   }
 })
 
+// a route to handle fetching about us content
+app.get('/about-us', (req, res) => {
+    res.json({title: "About Us", image: "./self.jpg", paragraphs: ['My name is Stella', 'I like mint', 'I also like birding']});
+})
+
 // export the express app we created to make it available to other modules
 module.exports = app // CommonJS export style!

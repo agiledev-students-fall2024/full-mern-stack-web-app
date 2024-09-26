@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import './AboutUs.css'
 
 /**
@@ -6,12 +7,19 @@ import './AboutUs.css'
  * @returns The contents of this component, in JSX form.
  */
 const AboutUs = props => {
-  return (
+    
+    const aboutUs = fetch('/about-us')
+    .then(response => {
+        console.log(response)
+        console.log("returning response.json()")
+        return response.json()
+    })
+    .then(data => {console.log('response.json() returned'); return data})
+
+    return (
     <>
-      <h1>About us page</h1>
-      <p>
-        about us
-      </p>
+      <h1>{aboutUs.title} </h1>
+      <img src={aboutUs.image} alt="me"/>
     </>
   )
 }
