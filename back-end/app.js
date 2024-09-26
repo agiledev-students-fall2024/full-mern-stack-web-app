@@ -5,6 +5,8 @@ const cors = require('cors') // middleware for enabling CORS (Cross-Origin Resou
 const mongoose = require('mongoose')
 
 const app = express() // instantiate an Express object
+const port = process.env.PORT || 3000
+app.use('/images',express.static('public/images'))
 app.use(morgan('dev', { skip: (req, res) => process.env.NODE_ENV === 'test' })) // log all incoming requests, except when in unit test mode.  morgan has a few logging default styles - dev is a nice concise color-coded style
 app.use(cors()) // allow cross-origin resource sharing
 
@@ -22,7 +24,7 @@ mongoose
 app.get('/about', async (req, res) => {
   res.json({
     name: 'Edison Chen',
-    url: `http://localhost:${port}$/about`, // Need to finish
+    url: `http://localhost:${port}/images/IMG_1.jpeg`,
     description: 'Hello! I am a senior at NYU Stern pursuing a dual degree in Business, Technology, and Entrepreneurship + computer science.',
     status: 'all good',
   })

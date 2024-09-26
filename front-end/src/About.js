@@ -6,16 +6,14 @@ import axios from 'axios'
  * @param {*} param0 an object holding any props passed to this component from its parent component
  * @returns The contents of this component, in JSX form.
  */
-const About = props => {
-  const [about, setAbout] = useState([])
+const About = () => {
+  const [about, setAbout] = useState({})
   const [error, setError] = useState('')
 
   /**
    * A nested function that fetches about page from the back-end server.
    */
-  const fetchAbout = () => {
-    // setMessages([])
-    // setLoaded(false)
+useEffect(() => {
     axios
       .get(`${process.env.REACT_APP_SERVER_HOSTNAME}/about`)
       .then(response => {
@@ -26,12 +24,13 @@ const About = props => {
         const errMsg = JSON.stringify(err, null, 2) // convert error object to a string so we can simply dump it to the screen
         setError(errMsg)
       })
-  }
+  }, [])
 
   return (
     <>
-      <h1>{about.name} googoo</h1>
-      <p>{about.name} gaga</p>
+      <h1>{about.name}</h1>
+      <p>{about.description}</p>
+      <img class="Profile-pic" src={about.url} alt="Edison Chen" />
     </>
   )
 }
