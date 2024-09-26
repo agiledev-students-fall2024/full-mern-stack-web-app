@@ -6,6 +6,8 @@ This is a so-called "`monorepo`" - a single repository containing all the compon
 - a back-end built with [Express.js](http://express.js.com)
 - a [MongoDB](https://mongodb.com) database connected to the back-end with [mongoose](https://mongoosejs.com)
 
+# Navigate to the About tab for results!
+
 ## Exercise Requirements
 
 To complete this exercise:
