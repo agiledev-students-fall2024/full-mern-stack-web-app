@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import './About.css'
 
 /**
  * A React component that shows a form the user can use to create a new message, as well as a list of any pre-existing messages.
@@ -28,9 +29,19 @@ useEffect(() => {
 
   return (
     <>
-      <h1>{about.name}</h1>
-      <p>{about.description}</p>
-      <img class="Profile-pic" src={about.url} alt="Edison Chen" />
+      <h1 className="headingMargin">{about.name}</h1>
+
+      <div className="centered-box">
+        {about.description && about.description.map((paragraph, index) => (
+          <p key={index} className="description-paragraph">
+            {paragraph}
+          </p>
+        ))}
+      </div>
+
+      <paragraphmargin>{error}</paragraphmargin>
+
+      <img className="pfp imageMargin" src={about.url} alt="Edison Chen" />
     </>
   )
 }

@@ -25,7 +25,12 @@ app.get('/about', async (req, res) => {
   res.json({
     name: 'Edison Chen',
     url: `http://localhost:${port}/images/IMG_1.jpeg`,
-    description: 'Hello! I am a senior at NYU Stern pursuing a dual degree in Business, Technology, and Entrepreneurship + computer science.',
+    description: [
+      'Hello! I am a senior at NYU Stern pursuing a dual degree in Business, Technology, and Entrepreneurship + computer science. I\'m passionate about AI 🧠 and Entrepreneurship 💼. I blend my technical expertise with a desire to make impactful contributions in both startups and product development.',
+      'At NYU, I co-founded the NYU Product Management Club, a space where students could explore product development in a hands-on environment. I also lead Print3D@NYU, a club dedicated to exploring 3D printing technologies.',
+      'Having been overweight for much of my life, I made a transformative change, losing over 70 pounds in just seven months. This experience has become a cornerstone of my personal philosophy, reinforcing the importance of discipline, long-term goal setting, and healthy habit-building. Whether it’s through weightlifting, badminton, or Brazilian jiu-jitsu, my commitment to fitness has reshaped my perspective on life, making me more resilient both mentally and physically.',
+      'If you\'re interested in learning about some of my projects, please check out my website here: https://edison-chen.notion.site/'
+    ],
     status: 'all good',
   })
 })

@@ -19,9 +19,39 @@ html {
   text-align: center;
 }
 
-.Profile-pic {
-  height: 5%;
-  pointer-events: none;
+.centered-box {
+  width: 50%;            /* Box takes up 50% of the screen width */
+  margin: 0 auto;        /* Horizontally centers the box */
+  background-color: #f9f9f9;  /* Optional background color */
+  padding: 20px;         /* Optional padding inside the box */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional shadow for visual effect */
+}
+
+.description-paragraph {
+  text-align: left;      /* Ensure the text is left-aligned */
+  text-indent: 20px;     /* Indent the first line */
+  margin-bottom: 15px;   /* Space between paragraphs */
+  line-height: 1.6;      /* Line spacing for readability */
+}
+
+.headingMargin {
+  margin-bottom: 2%;  /* Adds space between <h1> and .centered-box */
+}
+
+.imageMargin {
+  margin-top: 2%;      /* Adds space between the .centered-box and the img */
+}
+
+.pfp {
+  max-width: 35%;       /* Image takes full width of its container */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.3s ease-in-out;  /* Smooth transition for scaling */
+}
+
+.pfp:hover {
+  transform: scale(1.1); /* Scale the image up by 1.2x when hovered */
 }
 
 .App-main {
