@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
  * @param {*} param0 an object holding any props passed to this component from its parent component
  * @returns The contents of this component, in JSX form.
  */
-const Header = props => {
+const Header = props => { // **Add About Us link**
   return (
     <header className="Header-header">
       <nav className="Header-navbar">
@@ -20,6 +20,9 @@ const Header = props => {
           </li>
           <li className="nav-item">
             <Link to="/messages">Messages</Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/AboutUs">About Us</Link>
           </li>
         </ul>
       </nav>

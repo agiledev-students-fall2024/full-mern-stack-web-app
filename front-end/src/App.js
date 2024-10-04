@@ -6,6 +6,12 @@ import Home from './Home'
 import Header from './Header'
 import Footer from './Footer'
 
+// Import a New Page
+
+import AboutUs from './AboutUs'; 
+
+// import { AboutUs } from './AboutUs'; 
+
 const App = props => {
   return (
     <div className="App">
@@ -15,6 +21,10 @@ const App = props => {
           <Routes>
             {/* a route for the home page */}
             <Route path="/" element={<Home />} />
+
+
+            {/* a route for the About Us page */}
+            <Route path="/AboutUs" element={<AboutUs />} />
 
             {/* a route to see a list of all messages */}
             <Route path="/messages" element={<Messages />} />
