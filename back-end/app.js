@@ -78,5 +78,15 @@ app.post('/messages/save', async (req, res) => {
   }
 })
 
+// a route to handle fetching the about us content
+app.get('/about-us', async (req, res) => {
+      console.log('hit aboutus backend path')
+      res.json({
+        title: 'About Us',
+        image: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.RWMQcyT-vbe7UDuVsz5rOgHaGj%26pid%3DApi&f=1&ipt=307905d0973f622d4400f3cac136c9876859c082a455467c6d05c5abb70f3ef5&ipo=images',
+        paragraphs: ['nice', 'it\'s finally working', 'this is an eastern bluebird']
+      })
+  })
+
 // export the express app we created to make it available to other modules
 module.exports = app // CommonJS export style!
